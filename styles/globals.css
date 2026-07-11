@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 28% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+    --primary: 220 82% 24%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 28 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 215 28% 17%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 220 82% 24%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins antialiased;
+    touch-action: manipulation;
+  }
+
+  ::selection {
+    @apply bg-primary text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-light-gray;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-glass;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-secondary text-white font-semibold px-7 py-3.5 rounded-full
+           hover:bg-secondary-600 transition-all duration-300 shadow-orange-glow hover:shadow-lg
+           hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-white text-white font-semibold px-7 py-3.5 rounded-full
+           hover:bg-white hover:text-primary transition-all duration-300 hover:-translate-y-0.5;
+  }
+
+  .btn-outline-primary {
+    @apply inline-flex items-center gap-2 border-2 border-primary text-primary font-semibold px-7 py-3.5 rounded-full
+           hover:bg-primary hover:text-white transition-all duration-300 hover:-translate-y-0.5;
+  }
+
+  .section-tag {
+    @apply inline-flex items-center gap-2 bg-secondary/10 text-secondary font-semibold text-sm px-4 py-1.5 rounded-full mb-4;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-slate-500 max-w-2xl;
+  }
+
+  .card-base {
+    @apply bg-white rounded-2xl p-6 shadow-card-default hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .input-base {
+    @apply w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-foreground
+           focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary
+           transition-all duration-200 placeholder:text-slate-400;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-grid {
+    background-image: linear-gradient(rgba(11, 44, 111, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(11, 44, 111, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(rgba(11, 44, 111, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  .clip-diagonal-reverse {
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+  }
+}
