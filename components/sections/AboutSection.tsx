@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { CheckCircle2, Eye, Target, Shield, Lightbulb, Heart } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { fadeLeft, fadeRight, fadeUp, staggerContainer } from "@/lib/animations";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 const industries = [
   "Engineering & EPC",
@@ -42,43 +44,136 @@ export function AboutSection() {
       <div className="container-custom">
 
         {/* Intro */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-          <motion.div variants={fadeLeft} initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative">
-            <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
-                alt="Social Wizards team"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
-            </div>
-            {/* <motion.div
-              animate={{ y: [-5, 5, -5] }}
-              transition={{ duration: 4, repeat: Infinity }}
-              className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-5 shadow-card-hover"
-            >
-              <div className="text-3xl font-black text-primary">10+</div>
-              <div className="text-slate-500 text-sm font-medium">Years of Excellence</div>
-            </motion.div> */}
-          </motion.div>
+     <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
 
-          <motion.div variants={fadeRight} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <SectionHeader
-              tag="About Us"
-              title="Building Strong Teams. Powering Business Growth."
-              subtitle="Your Trusted Recruitment & Manpower Consulting Partner"
-            />
-            <p className="text-slate-500 leading-relaxed mt-4 mb-4">
-              Social Wizards is a leading recruitment and manpower consulting firm specializing in hiring skilled professionals across Engineering, Manufacturing, Construction, Oil & Gas, Chemical, Infrastructure, Power, Energy, EPC, and Industrial sectors.
-            </p>
-            <p className="text-slate-500 leading-relaxed mb-6">
-              With an extensive talent network and industry-focused recruitment expertise, we help organizations identify, attract, and hire the right talent quickly and efficiently. Whether you require a single critical resource or large-scale workforce deployment, our recruitment solutions are designed to meet your business objectives with speed, quality, and reliability.
-            </p>
-            <p className="text-secondary font-semibold text-sm italic">
-              "Finding the Right Talent. Building Long-Term Partnerships."
-            </p>
-          </motion.div>
+  {/* Left Image */}
+  <motion.div
+    variants={fadeLeft}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    className="relative"
+  >
+    <div className="relative h-[580px] rounded-[32px] overflow-hidden shadow-2xl">
+
+   <Image
+  src="/images/about-us.png"
+  alt="About Social Wizards"
+  fill
+  priority
+  className="object-contain"
+/>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/10 to-transparent" />
+
+      {/* Floating Card */}
+      {/* <div className="absolute bottom-8 left-8 bg-white rounded-2xl shadow-xl p-6 max-w-xs"> */}
+
+        {/* <h3 className="text-4xl font-black text-primary">
+          500+
+        </h3> */}
+
+        {/* <p className="text-slate-600 font-medium">
+          Companies trust Social Wizards
+          for their recruitment needs.
+        </p> */}
+
+      {/* </div> */}
+
+    </div>
+  </motion.div>
+
+  {/* Right Content */}
+
+  <motion.div
+    variants={fadeRight}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+  >
+
+    <SectionHeader
+      tag="About Social Wizards"
+      title="Building Strong Teams. Powering Industrial Growth."
+      subtitle="Trusted Recruitment & Manpower Consulting Partner Across India"
+    />
+
+    <p className="mt-6 text-lg leading-8 text-slate-600">
+
+      Social Wizards is a leading recruitment and manpower consulting company helping organizations hire highly skilled professionals across Engineering, Manufacturing, Oil & Gas, Construction, Infrastructure, Power, Chemical, EPC, and Industrial sectors.
+
+    </p>
+
+    <p className="mt-5 text-lg leading-8 text-slate-600">
+
+      Our experienced recruitment specialists combine industry expertise with an extensive talent network to deliver faster hiring, quality candidates, and customized workforce solutions that help businesses grow with confidence.
+
+    </p>
+
+    {/* Features */}
+
+    <div className="grid sm:grid-cols-2 gap-4 mt-8">
+
+      {[
+        "Industry Recruitment Experts",
+        "PAN India Hiring",
+        "Pre-Screened Talent Pool",
+        "Fast Turnaround Time",
+        "Executive Search",
+        "Bulk & Project Hiring",
+      ].map((item) => (
+
+        <div
+          key={item}
+          className="flex items-center gap-3"
+        >
+          <CheckCircle2
+            className="text-secondary"
+            size={20}
+          />
+
+          <span className="text-slate-700 font-medium">
+            {item}
+          </span>
+
         </div>
+
+      ))}
+
+    </div>
+
+    {/* Quote */}
+
+    <div className="mt-10 border-l-4 border-secondary pl-5">
+
+      <p className="italic text-lg font-semibold text-primary">
+
+        "Finding the Right Talent. Building Long-Term Partnerships."
+
+      </p>
+
+    </div>
+
+    {/* Button */}
+
+    <button
+      className="btn-primary mt-10 px-8 py-4"
+      onClick={() => {
+        document
+          .getElementById("contact")
+          ?.scrollIntoView({ behavior: "smooth" });
+      }}
+    >
+      Contact Us
+
+      <ArrowRight size={18} />
+
+    </button>
+
+  </motion.div>
+
+</div>
 
         {/* Industries + Why Us */}
         <div className="grid md:grid-cols-2 gap-8 mb-20">

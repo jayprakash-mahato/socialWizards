@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, SITE_CONFIG } from "@/constants";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -54,9 +55,15 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <button onClick={() => scrollTo("#home")} className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-              <span className="text-white font-black text-lg">SW</span>
-            </div>
+          <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-white shadow-md group-hover:shadow-lg transition-all duration-300">
+  <Image
+    src="/images/Social-Wizards-Logo.jpeg"
+    alt="Social Wizards Logo"
+    fill
+    priority
+    className="object-contain "
+  />
+</div>
             <div className="hidden sm:block text-left">
               <div className={cn("font-black text-lg leading-none transition-colors", scrolled ? "text-primary" : "text-white")}>
                 Social Wizards

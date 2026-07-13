@@ -1,8 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ArrowRight, CheckCircle2, Users, Briefcase, Award } from "lucide-react";
 import { fadeUp, fadeRight, staggerContainer } from "@/lib/animations";
+
+const BG_IMAGES = [
+  "/images/engineering.png",
+  "/images/manufacturing.png",
+  "/images/oil-gas.png",
+  "/images/construction.png",
+  "/images/power-energy.png",
+];
 
 const industries = [
   "Engineering & EPC",
@@ -26,6 +35,15 @@ const whyUs = [
 ];
 
 export function HeroSection() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % BG_IMAGES.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 72, behavior: "smooth" });
@@ -35,43 +53,66 @@ export function HeroSection() {
     <section
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, #050f2e 0%, #0B2C6F 40%, #0d3580 65%, #0a2560 100%)",
-      }}
+      // style={{ background: "#050f2e" }}
     >
-      {/* Layered background effects — pure CSS, no external image */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Radial glow top-right */}
-        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(255,122,0,0.12) 0%, transparent 70%)" }} />
-        {/* Radial glow bottom-left */}
-        <div className="absolute -bottom-40 -left-20 w-[500px] h-[500px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(11,44,111,0.6) 0%, transparent 70%)" }} />
-        {/* Subtle grid */}
-        <div className="absolute inset-0 bg-grid opacity-20" />
-        {/* Dot pattern */}
-        <div className="absolute inset-0 bg-dots opacity-10" />
-        {/* Animated orbs */}
-        <motion.div
-          animate={{ y: [-24, 24, -24], x: [-10, 10, -10] }}
-          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 right-1/3 w-80 h-80 rounded-full blur-3xl"
-          style={{ background: "rgba(255,122,0,0.07)" }}
-        />
-        <motion.div
-          animate={{ y: [20, -20, 20], x: [10, -10, 10] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl"
-          style={{ background: "rgba(255,255,255,0.04)" }}
-        />
-        {/* Diagonal accent line */}
-        <div className="absolute top-0 right-0 w-px h-full opacity-10"
-          style={{ background: "linear-gradient(to bottom, transparent, rgba(255,122,0,0.6), transparent)" }} />
-        <div className="absolute top-0 left-1/2 w-px h-full opacity-5"
-          style={{ background: "linear-gradient(to bottom, transparent, rgba(255,255,255,0.4), transparent)" }} />
+      {/* ── BACKGROUND IMAGE CAROUSEL (z-0, dimmed) ── */}
+      <div className="absolute inset-0 z-0">
+        <AnimatePresence mode="sync">
+          <motion.img
+            key={current}
+            src={BG_IMAGES[current]}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-fill"
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -60 }}
+            transition={{ duration: 1.1, ease: "easeInOut" }}
+          />
+        </AnimatePresence>
+        {/* Heavy dark-blue overlay so content stays bright & readable */}
+<div
+  className="absolute inset-0"
+  style={{
+    background:
+      "linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.58) 80%, rgba(0,0,0,0.40) 100%)",
+  }}
+/>
+        {/* Extra bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-40"
+          style={{ background: "linear-gradient(to top, rgba(5,15,46,0.7), transparent)" }} />
       </div>
 
-      <div className="container-custom relative z-10 pt-24 pb-20">
+      {/* ── DECORATIVE LAYER (z-10) ── */}
+      <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
+        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(255,122,0,0.10) 0%, transparent 70%)" }} />
+        <div className="absolute inset-0 bg-dots opacity-10" />
+        <motion.div
+          animate={{ y: [-24, 24, -24] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/4 right-1/3 w-80 h-80 rounded-full blur-3xl"
+          style={{ background: "rgba(255,122,0,0.06)" }}
+        />
+        {/* Carousel dots indicator */}
+        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-2">
+          {BG_IMAGES.map((_, i) => (
+            <button
+              key={i}
+              onPointerDown={() => setCurrent(i)}
+              aria-label={`Slide ${i + 1}`}
+              className="h-1.5 rounded-full transition-all duration-500 touch-manipulation"
+              style={{
+                width: i === current ? "28px" : "8px",
+                background: i === current ? "#FF7A00" : "rgba(255,255,255,0.35)",
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* ── CONTENT (z-20) ── */}
+      <div className="container-custom relative z-20 pt-24 pb-20">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
 
           {/* ── LEFT CONTENT ── */}
@@ -172,32 +213,32 @@ export function HeroSection() {
           >
             {/* Professional image with overlay */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ height: "320px" }}>
-              <img
+              {/* <img
                 src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=900&q=85"
                 alt="Professional recruitment team"
                 className="w-full h-full object-cover"
-              />
+              /> */}
               {/* Dark blue overlay on top of image */}
-              <div
+              {/* <div
                 className="absolute inset-0"
                 style={{
                   background: "linear-gradient(135deg, rgba(5,15,46,0.75) 0%, rgba(11,44,111,0.55) 50%, rgba(5,15,46,0.35) 100%)",
                 }}
-              />
+              /> */}
               {/* Orange accent bar at top */}
-              <div className="absolute top-0 left-0 right-0 h-1" style={{ background: "linear-gradient(to right, #FF7A00, transparent)" }} />
+              {/* <div className="absolute top-0 left-0 right-0 h-1" style={{ background: "linear-gradient(to right, #FF7A00, transparent)" }} /> */}
 
               {/* Overlay text on image */}
-              <div className="absolute bottom-0 left-0 right-0 p-5"
+              {/* <div className="absolute bottom-0 left-0 right-0 p-5"
                 style={{ background: "linear-gradient(to top, rgba(5,15,46,0.95), transparent)" }}>
                 <div className="text-white font-bold text-base mb-0.5">India's Trusted Recruitment Partner</div>
                 <div className="text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>
                   Connecting exceptional talent with leading industrial companies
                 </div>
-              </div>
+              </div> */}
 
               {/* Floating badge on image */}
-              <motion.div
+              {/* <motion.div
                 animate={{ y: [-4, 4, -4] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute top-4 right-4 rounded-xl px-3 py-2 text-xs font-bold backdrop-blur-md"
@@ -208,7 +249,7 @@ export function HeroSection() {
                 }}
               >
                 ✓ 15+ Industries
-              </motion.div>
+              </motion.div> */}
             </div>
 
             {/* Industries card */}
@@ -262,7 +303,7 @@ export function HeroSection() {
 
       {/* Scroll indicator */}
       <motion.button
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
         onClick={() => scrollTo("about")}
