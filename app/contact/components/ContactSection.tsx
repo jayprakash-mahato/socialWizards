@@ -29,7 +29,7 @@ const contactInfo = [
 
 const socials = [
   { icon: Linkedin, href: SITE_CONFIG.social.linkedin, label: "LinkedIn" },
-  { icon: Twitter, href: SITE_CONFIG.social.twitter, label: "Twitter" },
+  // { icon: Twitter, href: SITE_CONFIG.social.twitter, label: "Twitter" },
   { icon: Facebook, href: SITE_CONFIG.social.facebook, label: "Facebook" },
   { icon: Instagram, href: SITE_CONFIG.social.instagram, label: "Instagram" },
 ];

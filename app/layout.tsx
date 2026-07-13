@@ -49,7 +49,6 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   robots: { index: true, follow: true },
-  icons: { icon: "/favicon.ico", apple: "/apple-touch-icon.png" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -111,7 +111,7 @@ export function CTASection() {
             className="mt-14 grid grid-cols-2 gap-5 border-t border-white/20 pt-10 md:grid-cols-4"
           >
             {[
-              "No Placement Fee",
+              // "No Placement Fee",
               "48 Hour Hiring",
               "90-Day Replacement",
               "Pan India Network",

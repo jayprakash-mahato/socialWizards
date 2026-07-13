@@ -12,9 +12,9 @@ export const SITE_CONFIG = {
   whatsapp: "917977378159",
   social: {
     linkedin: "https://linkedin.com/company/socialwizards",
-    twitter: "https://twitter.com/socialwizards",
-    facebook: "https://facebook.com/socialwizards",
-    instagram: "https://instagram.com/socialwizards",
+    // twitter: "https://twitter.com/socialwizards",
+    facebook: "https://www.facebook.com/share/1Ce9YdXnkA/",
+    instagram: "https://www.instagram.com/socialwizards_2024?igsh=cDR2MWNmYWRtZXo=",
   },
 };
 
@@ -93,28 +93,28 @@ export const SERVICES = [
     ],
     image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80",
   },
-  {
-    id: "contract-staffing",
-    title: "Contract Staffing",
-    icon: "FileText",
-    shortDesc: "Flexible workforce solutions for project-based and seasonal needs.",
-    description:
-      "Scale your workforce up or down with our contract staffing solutions. We provide skilled professionals on flexible terms, managing all compliance, payroll, and HR administration.",
-    benefits: [
-      "Rapid deployment within 48 hours",
-      "Full compliance management",
-      "Flexible contract durations",
-      "Cost-effective workforce scaling",
-    ],
-    features: [
-      "Short & long-term contracts",
-      "Payroll & statutory compliance",
-      "On-site HR support",
-      "Performance monitoring",
-      "Contract-to-hire options",
-    ],
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
-  },
+  // {
+  //   id: "contract-staffing",
+  //   title: "Contract Staffing",
+  //   icon: "FileText",
+  //   shortDesc: "Flexible workforce solutions for project-based and seasonal needs.",
+  //   description:
+  //     "Scale your workforce up or down with our contract staffing solutions. We provide skilled professionals on flexible terms, managing all compliance, payroll, and HR administration.",
+  //   benefits: [
+  //     "Rapid deployment within 48 hours",
+  //     "Full compliance management",
+  //     "Flexible contract durations",
+  //     "Cost-effective workforce scaling",
+  //   ],
+  //   features: [
+  //     "Short & long-term contracts",
+  //     "Payroll & statutory compliance",
+  //     "On-site HR support",
+  //     "Performance monitoring",
+  //     "Contract-to-hire options",
+  //   ],
+  //   image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
+  // },
   {
     id: "project-hiring",
     title: "Project Hiring",
@@ -181,50 +181,50 @@ export const SERVICES = [
     ],
     image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80",
   },
-  {
-    id: "campus-recruitment",
-    title: "Campus Recruitment",
-    icon: "GraduationCap",
-    shortDesc: "Fresh talent acquisition from premier engineering and management institutes.",
-    description:
-      "Build your future workforce by tapping into India's top engineering and management colleges. Our campus recruitment programs are designed to attract, assess, and onboard the brightest graduates.",
-    benefits: [
-      "Access to top institute talent",
-      "Structured campus programs",
-      "Pre-placement talks & branding",
-      "Fresher training support",
-    ],
-    features: [
-      "IIT/NIT/BITS partnerships",
-      "Pre-placement workshops",
-      "Aptitude & technical tests",
-      "Group discussions & interviews",
-      "Offer letter management",
-    ],
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80",
-  },
-  {
-    id: "payroll-services",
-    title: "Payroll Services",
-    icon: "DollarSign",
-    shortDesc: "End-to-end payroll management and statutory compliance solutions.",
-    description:
-      "Outsource your payroll complexities to us. We handle salary processing, statutory deductions, compliance filings, and employee queries with complete accuracy and confidentiality.",
-    benefits: [
-      "100% statutory compliance",
-      "Timely salary disbursement",
-      "Reduced administrative burden",
-      "Expert compliance team",
-    ],
-    features: [
-      "Monthly payroll processing",
-      "PF, ESI, PT management",
-      "TDS calculation & filing",
-      "Payslip generation",
-      "Annual returns filing",
-    ],
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
-  },
+  // {
+  //   id: "campus-recruitment",
+  //   title: "Campus Recruitment",
+  //   icon: "GraduationCap",
+  //   shortDesc: "Fresh talent acquisition from premier engineering and management institutes.",
+  //   description:
+  //     "Build your future workforce by tapping into India's top engineering and management colleges. Our campus recruitment programs are designed to attract, assess, and onboard the brightest graduates.",
+  //   benefits: [
+  //     "Access to top institute talent",
+  //     "Structured campus programs",
+  //     "Pre-placement talks & branding",
+  //     "Fresher training support",
+  //   ],
+  //   features: [
+  //     "IIT/NIT/BITS partnerships",
+  //     "Pre-placement workshops",
+  //     "Aptitude & technical tests",
+  //     "Group discussions & interviews",
+  //     "Offer letter management",
+  //   ],
+  //   image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80",
+  // },
+  // {
+  //   id: "payroll-services",
+  //   title: "Payroll Services",
+  //   icon: "DollarSign",
+  //   shortDesc: "End-to-end payroll management and statutory compliance solutions.",
+  //   description:
+  //     "Outsource your payroll complexities to us. We handle salary processing, statutory deductions, compliance filings, and employee queries with complete accuracy and confidentiality.",
+  //   benefits: [
+  //     "100% statutory compliance",
+  //     "Timely salary disbursement",
+  //     "Reduced administrative burden",
+  //     "Expert compliance team",
+  //   ],
+  //   features: [
+  //     "Monthly payroll processing",
+  //     "PF, ESI, PT management",
+  //     "TDS calculation & filing",
+  //     "Payslip generation",
+  //     "Annual returns filing",
+  //   ],
+  //   image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+  // },
   {
     id: "manufacturing-recruitment",
     title: "Manufacturing Recruitment",
@@ -247,28 +247,28 @@ export const SERVICES = [
     ],
     image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80",
   },
-  {
-    id: "technical-recruitment",
-    title: "Technical Recruitment",
-    icon: "Settings",
-    shortDesc: "Niche technical talent for specialized engineering and technology roles.",
-    description:
-      "Finding rare technical talent requires deep domain expertise. Our technical recruitment specialists understand complex job requirements and identify candidates with the precise skills your projects demand.",
-    benefits: [
-      "Niche technical expertise",
-      "Skills-based assessments",
-      "Certified professional network",
-      "Fast turnaround on hard-to-fill roles",
-    ],
-    features: [
-      "Mechanical & electrical engineers",
-      "Instrumentation specialists",
-      "Process & chemical engineers",
-      "Civil & structural engineers",
-      "HSE professionals",
-    ],
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80",
-  },
+  // {
+  //   id: "technical-recruitment",
+  //   title: "Technical Recruitment",
+  //   icon: "Settings",
+  //   shortDesc: "Niche technical talent for specialized engineering and technology roles.",
+  //   description:
+  //     "Finding rare technical talent requires deep domain expertise. Our technical recruitment specialists understand complex job requirements and identify candidates with the precise skills your projects demand.",
+  //   benefits: [
+  //     "Niche technical expertise",
+  //     "Skills-based assessments",
+  //     "Certified professional network",
+  //     "Fast turnaround on hard-to-fill roles",
+  //   ],
+  //   features: [
+  //     "Mechanical & electrical engineers",
+  //     "Instrumentation specialists",
+  //     "Process & chemical engineers",
+  //     "Civil & structural engineers",
+  //     "HSE professionals",
+  //   ],
+  //   image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80",
+  // },
   {
     id: "oil-gas-recruitment",
     title: "Oil & Gas Recruitment",

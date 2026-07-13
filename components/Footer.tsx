@@ -2,6 +2,7 @@
 
 import { Mail, Phone, Linkedin, Twitter, Facebook, Instagram, ArrowRight } from "lucide-react";
 import { NAV_LINKS, SITE_CONFIG, SERVICES } from "@/constants";
+import Image from "next/image";
 
 function scrollTo(href: string) {
   const id = href.replace("#", "");
@@ -22,9 +23,15 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center">
-                <span className="text-white font-black text-lg">SW</span>
-              </div>
+                   <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-white shadow-md group-hover:shadow-lg transition-all duration-300">
+               <Image
+                 src="/images/Social-Wizards-Logo.jpeg"
+                 alt="Social Wizards Logo"
+                 fill
+                 priority
+                 className="object-contain "
+               />
+             </div>
               <div>
                 <div className="font-black text-lg leading-none">Social Wizards</div>
                 <div className="text-secondary text-xs font-medium mt-0.5">Recruitment & Manpower Consulting</div>
@@ -36,7 +43,7 @@ export function Footer() {
             <div className="flex items-center gap-3">
               {[
                 { icon: Linkedin, href: SITE_CONFIG.social.linkedin, label: "LinkedIn" },
-                { icon: Twitter, href: SITE_CONFIG.social.twitter, label: "Twitter" },
+                // { icon: Twitter, href: SITE_CONFIG.social.twitter, label: "Twitter" },
                 { icon: Facebook, href: SITE_CONFIG.social.facebook, label: "Facebook" },
                 { icon: Instagram, href: SITE_CONFIG.social.instagram, label: "Instagram" },
               ].map(({ icon: Icon, href, label }) => (

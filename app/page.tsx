@@ -12,7 +12,7 @@ export const metadata: Metadata = genMeta({
   title: "Social Wizards - Recruitment & Manpower Consulting Partner",
   description:
     "Social Wizards is a leading recruitment and manpower consulting firm specializing in hiring skilled professionals across Engineering, Manufacturing, Oil & Gas, EPC, and Industrial sectors across India.",
-  path: "/",
+  // path: "/",
 });
 
 export default function HomePage() {
