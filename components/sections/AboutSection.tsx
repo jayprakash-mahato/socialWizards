@@ -52,14 +52,14 @@ export function AboutSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
             </div>
-            <motion.div
+            {/* <motion.div
               animate={{ y: [-5, 5, -5] }}
               transition={{ duration: 4, repeat: Infinity }}
               className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-5 shadow-card-hover"
             >
               <div className="text-3xl font-black text-primary">10+</div>
               <div className="text-slate-500 text-sm font-medium">Years of Excellence</div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           <motion.div variants={fadeRight} initial="hidden" whileInView="visible" viewport={{ once: true }}>

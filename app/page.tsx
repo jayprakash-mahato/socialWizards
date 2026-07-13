@@ -19,7 +19,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <StatsSection />
+      {/* <StatsSection /> */}
       <AboutSection />
       <ServicesSection />
       <ClientsSection />

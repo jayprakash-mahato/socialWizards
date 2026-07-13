@@ -44,13 +44,36 @@ export function ContactSection() {
     reset,
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
-  const onSubmit = async (data: FormData) => {
-    await new Promise((r) => setTimeout(r, 1500));
-    console.log(data);
+const onSubmit = async (data: FormData) => {
+
+    console.log("Form submitted!");
+  // console.log(data);
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (!result.success) {
+      throw new Error("Failed");
+    }
+
     setSubmitted(true);
     reset();
-    setTimeout(() => setSubmitted(false), 5000);
-  };
+
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 5000);
+  } catch (error) {
+    alert("Something went wrong.");
+    console.log(error);
+  }
+};
 
   return (
     <section className="section-padding bg-light-gray">

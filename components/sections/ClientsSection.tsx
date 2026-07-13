@@ -54,7 +54,7 @@ export function ClientsSection() {
         </motion.div>
 
         {/* Placeholder slots */}
-        <div className="mt-6">
+        {/* <div className="mt-6">
           <p className="text-center text-slate-400 text-sm mb-5 font-medium">We continue to grow our client partnerships</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {placeholders.map((_, i) => (
@@ -66,10 +66,10 @@ export function ClientsSection() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Stats bar */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -89,10 +89,10 @@ export function ClientsSection() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Testimonials */}
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <SectionHeader tag="Testimonials" title="What Our Clients Say" center />
           <div className="mt-12 max-w-3xl mx-auto">
             <motion.div
@@ -136,7 +136,7 @@ export function ClientsSection() {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
 
       </div>
     </section>

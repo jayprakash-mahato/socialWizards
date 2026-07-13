@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { staggerContainer, fadeUp } from "@/lib/animations";
+import Image from "next/image";
 
 const coreServices = [
   {
@@ -16,12 +17,12 @@ const coreServices = [
     desc: "We identify and recruit highly qualified professionals for permanent positions across technical, engineering, manufacturing, and corporate functions.",
     color: "primary",
   },
-  {
-    icon: FileText,
-    title: "Contract Staffing",
-    desc: "Flexible staffing solutions for short-term, long-term, and project-based workforce requirements.",
-    color: "secondary",
-  },
+  // {
+  //   icon: FileText,
+  //   title: "Contract Staffing",
+  //   desc: "Flexible staffing solutions for short-term, long-term, and project-based workforce requirements.",
+  //   color: "secondary",
+  // },
   {
     icon: Zap,
     title: "Project & Shutdown Hiring",
@@ -47,44 +48,44 @@ const industryServices = [
     icon: Settings,
     title: "Engineering & EPC",
     desc: "Recruitment for design engineering, project execution, commissioning, maintenance, and technical support.",
-    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80",
+    image: "/images/engineering.png",
   },
   {
     icon: Flame,
     title: "Oil & Gas",
     desc: "Onshore and offshore recruitment for refinery, petrochemical, pipeline, shutdown, and maintenance projects.",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80",
+    image: "/images/oil-gas.png",
   },
   {
     icon: Factory,
     title: "Manufacturing",
     desc: "Production, maintenance, quality, utilities, operations, and plant management professionals.",
-    image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&q=80",
+    image: "/images/manufacturing.png",
   },
   {
     icon: Settings,
     title: "Chemical Industry",
     desc: "Recruitment for specialty chemicals, process plants, pharmaceuticals, and industrial chemical manufacturing.",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80",
+    image: "/images/chemical.png",
   },
   {
     icon: HardHat,
     title: "Construction & Infrastructure",
     desc: "Civil, MEP, structural, industrial construction, commercial projects, and infrastructure development.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
+    image: "/images/construction.png",
   },
   {
     icon: Zap,
     title: "Power & Energy",
     desc: "Thermal, renewable, transmission, distribution, and industrial power plant recruitment.",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80",
+    image: "/images/power-energy.png",
   },
-  {
-    icon: Users,
-    title: "FMCG & Industrial Production",
-    desc: "Production planning, operations, packaging, quality assurance, maintenance, and warehouse management.",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
-  },
+  // {
+  //   icon: Users,
+  //   title: "FMCG & Industrial Production",
+  //   desc: "Production planning, operations, packaging, quality assurance, maintenance, and warehouse management.",
+  //   image: "/images/epic.png",
+  // },
 ];
 
 export function ServicesSection() {
@@ -172,11 +173,13 @@ export function ServicesSection() {
                 onClick={() => setExpanded(expanded === svc.title ? null : svc.title)}
               >
                 <div className="relative h-36 overflow-hidden">
-                  <img
-                    src={svc.image}
-                    alt={svc.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+               <Image
+  src={svc.image}
+  alt={svc.title}
+  fill
+  className="object-cover group-hover:scale-105 transition-transform duration-500"
+  sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 25vw"
+/>
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
                   <div className="absolute bottom-3 left-3 w-9 h-9 bg-secondary rounded-lg flex items-center justify-center">
                     <Icon size={17} className="text-white" />

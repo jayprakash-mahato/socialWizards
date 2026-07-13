@@ -139,7 +139,7 @@ export function HeroSection() {
             </motion.div>
 
             {/* Stats row */}
-            <motion.div
+            {/* <motion.div
               variants={fadeUp}
               className="flex flex-wrap items-center gap-7 pt-8"
               style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
@@ -160,7 +160,7 @@ export function HeroSection() {
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           {/* ── RIGHT — IMAGE + FLOATING CARDS ── */}
@@ -212,7 +212,7 @@ export function HeroSection() {
             </div>
 
             {/* Industries card */}
-            <motion.div
+            {/* <motion.div
               animate={{ y: [-5, 5, -5] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               className="rounded-2xl p-5 backdrop-blur-md"
@@ -232,10 +232,10 @@ export function HeroSection() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </motion.div> */}
 
             {/* Why us card */}
-            <motion.div
+            {/* <motion.div
               animate={{ y: [5, -5, 5] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               className="rounded-2xl p-5 backdrop-blur-md"
@@ -255,7 +255,7 @@ export function HeroSection() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>
