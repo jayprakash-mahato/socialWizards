@@ -55,7 +55,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <button onClick={() => scrollTo("#home")} className="flex items-center gap-3 group">
-          <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-white shadow-md group-hover:shadow-lg transition-all duration-300">
+          <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-white shadow-md group-hover:shadow-lg transition-all duration-300">
   <Image
     src="/images/Social-Wizards-Logo.jpeg"
     alt="Social Wizards Logo"
