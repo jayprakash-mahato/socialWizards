@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     } = body;
 
     await resend.emails.send({
-      from: "Social Wizards <onboarding@resend.dev>", // replace with verified domain later
+    from: "Social Wizards <noreply@socialwizards.co.in>", // replace with verified domain later
       to: ["business@socialwizards.co.in"], // <-- YOUR EMAIL
       subject: `New Contact Form Submission from ${name}`,
       html: `
@@ -60,7 +60,7 @@ export async function POST(req: Request) {
     });
 
       await resend.emails.send({
-      from: "Social Wizards <noreply@socialwizards.in>",
+     from: "Social Wizards <noreply@socialwizards.co.in>",
       to: [email],
       subject: "Thank you for contacting Social Wizards",
       html: `
@@ -151,7 +151,7 @@ export async function POST(req: Request) {
 
       <br/>
 
-      <a href="https://socialwizards.in"
+      <a href="https://socialwizards.co.in"
       style="
       background:#FF7A00;
       color:white;
@@ -183,7 +183,7 @@ export async function POST(req: Request) {
 
       <br/>
 
-      ✉ info@socialwizards.in
+      ✉ info@socialwizards.co.in
 
       </div>
 
