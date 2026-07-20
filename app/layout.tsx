@@ -7,6 +7,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { BackToTop } from "@/components/BackToTop";
 import { organizationSchema } from "@/lib/seo";
 import { SITE_CONFIG } from "@/constants";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -66,6 +67,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <WhatsAppButton />
         <BackToTop />
+        <GoogleAnalytics
+  gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!}
+/>
       </body>
     </html>
   );
