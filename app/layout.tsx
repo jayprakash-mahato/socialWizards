@@ -67,9 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <WhatsAppButton />
         <BackToTop />
-        <GoogleAnalytics
-  gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!}
-/>
+    <GoogleAnalytics gaId="G-YEMYC2KSGC" />
       </body>
     </html>
   );
