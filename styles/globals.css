@@ -33,11 +33,15 @@
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    /* Make the base font-size slightly smaller and fluid for responsiveness
+       This reduces overall sizes across Tailwind rem-based utilities. */
+    font-size: clamp(13px, 0.8vw + 0.6rem, 16px);
   }
 
   body {
     @apply bg-background text-foreground font-poppins antialiased;
     touch-action: manipulation;
+    line-height: 1.5;
   }
 
   ::selection {
@@ -95,11 +99,12 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight;
+    /* Slightly smaller section titles by default for improved mobile legibility */
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold text-primary leading-tight;
   }
 
   .section-subtitle {
-    @apply text-lg text-slate-500 max-w-2xl;
+    @apply text-base text-slate-500 max-w-2xl;
   }
 
   .card-base {

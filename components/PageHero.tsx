@@ -64,11 +64,11 @@ export function PageHero({ title, subtitle, breadcrumbs, image }: PageHeroProps)
             </motion.nav>
           )}
 
-          <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
+          <motion.h1 variants={fadeUp} className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
             {title}
           </motion.h1>
           {subtitle && (
-            <motion.p variants={fadeUp} className="text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
+            <motion.p variants={fadeUp} className="text-base md:text-lg text-white/75 max-w-2xl leading-relaxed">
               {subtitle}
             </motion.p>
           )}

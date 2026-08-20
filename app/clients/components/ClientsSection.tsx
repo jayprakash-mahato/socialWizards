@@ -81,7 +81,7 @@ export function ClientsSection() {
               { value: "98%", label: "Client Retention" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-3xl md:text-4xl font-black text-secondary mb-1">{stat.value}</div>
+                <div className="text-2xl md:text-3xl font-black text-secondary mb-1">{stat.value}</div>
                 <div className="text-white/70 text-sm font-medium">{stat.label}</div>
               </div>
             ))}
