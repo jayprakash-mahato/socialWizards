@@ -134,7 +134,7 @@ export function HeroSection() {
             {/* Headline */}
             <motion.h1
               variants={fadeUp}
-              className="text-4xl md:text-5xl lg:text-[3.4rem] font-black text-white leading-[1.08] mb-5"
+              className="text-3xl md:text-4xl lg:text-[2.6rem] font-black text-white leading-[1.08] mb-5"
             >
               Building Strong{" "}
               <span
@@ -156,10 +156,10 @@ export function HeroSection() {
             </motion.h1>
 
             {/* Description */}
-            <motion.p variants={fadeUp} className="text-base md:text-lg leading-relaxed mb-3 max-w-xl" style={{ color: "rgba(255,255,255,0.82)" }}>
+            <motion.p variants={fadeUp} className="text-sm md:text-base leading-relaxed mb-3 max-w-xl" style={{ color: "rgba(255,255,255,0.82)" }}>
               Social Wizards is a leading recruitment and manpower consulting firm specializing in hiring skilled professionals across Engineering, Manufacturing, Construction, Oil & Gas, Chemical, Infrastructure, Power, Energy, EPC, and Industrial sectors.
             </motion.p>
-            <motion.p variants={fadeUp} className="text-sm md:text-base leading-relaxed mb-9 max-w-xl" style={{ color: "rgba(255,255,255,0.58)" }}>
+            <motion.p variants={fadeUp} className="text-xs md:text-sm leading-relaxed mb-9 max-w-xl" style={{ color: "rgba(255,255,255,0.58)" }}>
               With an extensive talent network and industry-focused expertise, we help organizations identify, attract, and hire the right talent quickly — whether a single critical resource or large-scale workforce deployment.
             </motion.p>
 

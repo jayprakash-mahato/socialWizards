@@ -44,7 +44,7 @@ export function AboutIntro() {
               transition={{ duration: 4, repeat: Infinity }}
               className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-5 shadow-card-hover"
             >
-              <div className="text-3xl font-black text-primary">10+</div>
+              <div className="text-2xl font-black text-primary">10+</div>
               <div className="text-slate-500 text-sm font-medium">Years of Excellence</div>
             </motion.div>
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-secondary/20 rounded-full blur-xl" />

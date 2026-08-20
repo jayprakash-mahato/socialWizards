@@ -20,7 +20,7 @@ export function StatsSection() {
         >
           {STATS.map((stat) => (
             <motion.div key={stat.label} variants={fadeUp} className="text-center group">
-              <div className="text-4xl md:text-5xl font-black text-white mb-2">
+              <div className="text-3xl md:text-4xl font-black text-white mb-2">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </div>
               <div className="w-8 h-0.5 bg-secondary mx-auto mb-2 group-hover:w-16 transition-all duration-300" />

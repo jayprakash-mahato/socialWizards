@@ -60,7 +60,7 @@ export function CTASection() {
 
           <motion.h2
             variants={fadeUp}
-            className="mt-8 text-4xl font-black leading-tight text-white drop-shadow-2xl md:text-6xl"
+            className="mt-8 text-3xl font-black leading-tight text-white drop-shadow-2xl md:text-5xl"
           >
             Let's Build Your{" "}
             <span className="text-orange-400">
@@ -72,7 +72,7 @@ export function CTASection() {
 
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/90 md:text-xl"
+            className="mx-auto mt-6 max-w-3xl text-base leading-7 text-white/90 md:text-lg"
           >
             Partner with <strong>Social Wizards</strong> and gain access to
             India's trusted industrial recruitment network. We help businesses
@@ -89,7 +89,7 @@ export function CTASection() {
           >
             <button
               onClick={() => scrollTo("contact")}
-              className="flex items-center gap-2 rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-orange-600"
+              className="flex items-center gap-2 rounded-xl bg-orange-500 px-8 py-4 text-base font-semibold text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-orange-600"
             >
               Contact Us
               <ArrowRight size={20} />
@@ -97,7 +97,7 @@ export function CTASection() {
 
             <button
               onClick={() => scrollTo("contact")}
-              className="flex items-center gap-2 rounded-xl border border-white/40 bg-white/10 px-8 py-4 text-lg font-semibold text-white backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-white hover:text-[#0B2C6F]"
+              className="flex items-center gap-2 rounded-xl border border-white/40 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-white hover:text-[#0B2C6F]"
             >
               <Phone size={20} />
               Hire Now
